@@ -1,0 +1,4 @@
+# ignore node module
+node_modules
+
+src/input.css
