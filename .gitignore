@@ -2,3 +2,7 @@
 node_modules
 
 src/input.css
+tailwind.config.js
+package-lock.json
+package.json
+.vscode
