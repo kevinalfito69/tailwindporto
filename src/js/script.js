@@ -10,7 +10,7 @@ window.onscroll = () => {
   } else {
     header.classList.remove("navbar-fix");
     backtop.classList.add("hidden");
-  }
+  } 
 };
 //Hamburger Menu
 const hamburger = document.getElementById("hamburger");
@@ -25,13 +25,29 @@ hamburger.addEventListener("click", () => {
 // klik di luar nav menu
 window.addEventListener("click", (event) => {
     if (
-        event.target.matches("#hamburger") ||
-        event.target.matches("#nav-menu")
+        event.target != hamburger &&
+        event.target != navMenu
 
     ) {
-        return;
+        hamburger.classList.remove("hamburger-active");
+        navMenu.classList.add("hidden");
     }
-    hamburger.classList.remove("hamburger-active");
-    navMenu.classList.add("hidden");
-    }
-);
+    
+    });
+
+    // darkMode
+const darkModeToggle = document.getElementById("darkmode-toggle");
+const html = document.querySelector("html");
+
+darkModeToggle.addEventListener("click", () => {
+    darkModeToggle.checked ? [html.classList.add('dark') , localStorage.theme = 'dark']: [html.classList.remove('dark') , localStorage.theme = 'light'];
+});
+
+// local storage dark mode
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+    darkModeToggle.checked = true
+  } else {
+    document.documentElement.classList.remove('dark')
+    darkModeToggle.checked = false
+  }
