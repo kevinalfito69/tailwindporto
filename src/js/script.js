@@ -16,6 +16,7 @@ window.onscroll = () => {
 const hamburger = document.getElementById("hamburger");
 // navmenu
 const navMenu = document.getElementById("nav-menu");
+const navMenuLi = document.querySelector("#nav-menu li");
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("hamburger-active");
@@ -23,17 +24,18 @@ hamburger.addEventListener("click", () => {
 });
 
 // klik di luar nav menu
-window.addEventListener("click", (event) => {
-    if (
-        event.target != hamburger &&
-        event.target != navMenu
+// window.addEventListener("click", (event) => {
+//     if (
+//         event.target != hamburger &&
+//         event.target != navMenuLi
 
-    ) {
-        hamburger.classList.remove("hamburger-active");
-        navMenu.classList.add("hidden");
-    }
+
+//     ) {
+//         hamburger.classList.remove("hamburger-active");
+//         navMenu.classList.add("hidden");
+//     }
     
-    });
+//     });
 
     // darkMode
 const darkModeToggle = document.getElementById("darkmode-toggle");
